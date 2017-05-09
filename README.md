@@ -29,6 +29,7 @@ Arguments:
         camera: "front" || "back" // defaults to "back"
         flash: "on" || "off" || "auto" // defaults to "auto". See Quirks
         drawSight: true || false //defaults to true, create a red sight/line in the center of the scanner view.
+        drawAddManuallyButton: true || false // defaults to false, to create a button on center bottom of view to close scanner and return 'add_manually' code, used for instance to called another view to add barcode number manually by JavaScript layer.
     }
     ```
 

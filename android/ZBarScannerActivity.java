@@ -56,6 +56,7 @@ implements SurfaceHolder.Callback {
     // Public Constants ------------------------------------------------
 
     public static final String EXTRA_QRVALUE = "qrValue";
+    public static final String EXTRA_CANCELLED = "cancelledValue";
     public static final String EXTRA_PARAMS = "params";
     public static final int RESULT_ERROR = RESULT_FIRST_USER + 1;
     private static final int CAMERA_PERMISSION_REQUEST = 1;
@@ -140,6 +141,7 @@ implements SurfaceHolder.Callback {
             Boolean drawSight = params.optBoolean("drawSight", true);
             whichCamera = params.optString("camera");
             flashMode = params.optString("flash");
+            Boolean drawAddManuallyButton = params.optBoolean("drawAddManuallyButton", false);
 
             // Initiate instance variables
             autoFocusHandler = new Handler();
@@ -164,6 +166,11 @@ implements SurfaceHolder.Callback {
             // Draw/hide the sight
             if(!drawSight) {
                 findViewById(getResourceId("id/csZbarScannerSight")).setVisibility(View.INVISIBLE);
+            }
+
+            // Draw/hide the addManuallyButton
+            if(!drawAddManuallyButton) {
+                findViewById(getResourceId("id/csZbarScannerAddManuallyButton")).setVisibility(View.INVISIBLE);
             }
 
             // Create preview SurfaceView
@@ -265,7 +272,9 @@ implements SurfaceHolder.Callback {
     @Override
     public void onBackPressed ()
     {
-        setResult(RESULT_CANCELED);
+        Intent result = new Intent ();
+        result.putExtra(EXTRA_CANCELLED, 0);
+        setResult(Activity.RESULT_CANCELED, result);
         super.onBackPressed();
     }
 
@@ -369,6 +378,15 @@ implements SurfaceHolder.Callback {
         	Log.d("csZBar", (new StringBuilder("Wrong holder data")).append(flashMode).toString());
 		}
     }
+
+    public void addManually(View view)
+    {
+        Intent result = new Intent ();
+        result.putExtra(EXTRA_CANCELLED, 1);
+        setResult(Activity.RESULT_CANCELED, result);
+        finish();
+    }
+
     // Continuously auto-focus -----------------------------------------
     // For API Level < 14
 

@@ -61,6 +61,24 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <Button android:id="@+id/csZbarScannerAddManuallyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="10pt"
+            android:textColor="#fff"
+            android:fontFamily="sans-serif-light"
+            android:text="Adicionar manualmente"
+            android:background="#76c043"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:onClick="addManually"
+            android:longClickable="true"
+            android:visibility="visible" />
+
     </RelativeLayout>
 
 </FrameLayout>
