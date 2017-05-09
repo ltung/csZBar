@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/csZbarScannerBackground" >
-
+    <!--
     <TextView android:id="@+id/csZbarScannerTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,9 +19,9 @@
         android:background="@color/csZbarScannerTextBackground"
         android:fontFamily="sans-serif-light"
         android:textSize="15pt" />
-
+    -->
     <TextView android:id="@+id/csZbarScannerInstructions"
-        android:layout_gravity="center|bottom"
+        android:layout_gravity="center|top"
         android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"

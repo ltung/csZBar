@@ -158,10 +158,10 @@ implements SurfaceHolder.Callback {
             setContentView(getResourceId("layout/cszbarscanner"));
 
             // Update view with customisable strings
-            TextView view_textTitle = (TextView) findViewById(getResourceId("id/csZbarScannerTitle"));
-            TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
-            view_textTitle.setText(textTitle);
-            view_textInstructions.setText(textInstructions);
+            // TextView view_textTitle = (TextView) findViewById(getResourceId("id/csZbarScannerTitle"));
+            // TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
+            // view_textTitle.setText(textTitle);
+            // view_textInstructions.setText(textInstructions);
 
             // Draw/hide the sight
             if(!drawSight) {
@@ -193,7 +193,7 @@ implements SurfaceHolder.Callback {
             FrameLayout scannerView = (FrameLayout) findViewById(getResourceId("id/csZbarScannerView"));
             scannerView.addView(scannerSurface);
 
-            findViewById(getResourceId("id/csZbarScannerTitle")).bringToFront();
+            //findViewById(getResourceId("id/csZbarScannerTitle")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerInstructions")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerSightContainer")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerSight")).bringToFront();
