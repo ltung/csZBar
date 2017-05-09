@@ -8,7 +8,7 @@
     </engines>
 
     <name>ZBar barcode scanner</name>
-    <author>TJ Woon (tj@cloudsky.org)</author>
+    <author>Felipe Marques forked from (https://github.com/tjwoon/csZBar) by TJ Woon (tj@cloudsky.org)</author>
     <description>Plugin to integrate with the ZBar barcode scanning library.</description>
     <license>Apache 2.0</license>
     <keywords>cszbar,zbar,barcode,qr,qr code,scanner</keywords>
