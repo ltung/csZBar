@@ -142,6 +142,7 @@ implements SurfaceHolder.Callback {
             whichCamera = params.optString("camera");
             flashMode = params.optString("flash");
             Boolean drawAddManuallyButton = params.optBoolean("drawAddManuallyButton", false);
+            Boolean drawToggleFlash = params.optBoolean("drawToggleFlashButton", false);
 
             // Initiate instance variables
             autoFocusHandler = new Handler();
@@ -173,6 +174,12 @@ implements SurfaceHolder.Callback {
                 findViewById(getResourceId("id/csZbarScannerAddManuallyButton")).setVisibility(View.INVISIBLE);
             }
 
+            // Draw/hide the ToggleFlash Button
+            if(!drawToggleFlash){
+                findViewById(getResourceId("id/csZbarScannerToggleFlashButton")).setVisibility(View.INVISIBLE);
+            }
+            
+
             // Create preview SurfaceView
             scannerSurface = new SurfaceView (this) {
                 @Override
@@ -197,6 +204,8 @@ implements SurfaceHolder.Callback {
             findViewById(getResourceId("id/csZbarScannerInstructions")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerSightContainer")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerSight")).bringToFront();
+            findViewById(getResourceId("id/csZbarScannerAddManuallyButton")).bringToFront();
+            findViewById(getResourceId("id/csZbarScannerToggleFlashButton")).bringToFront();
             scannerView.requestLayout();
             scannerView.invalidate();
 
