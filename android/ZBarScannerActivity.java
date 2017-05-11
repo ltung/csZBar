@@ -160,9 +160,10 @@ implements SurfaceHolder.Callback {
 
             // Update view with customisable strings
             // TextView view_textTitle = (TextView) findViewById(getResourceId("id/csZbarScannerTitle"));
-            // TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
             // view_textTitle.setText(textTitle);
-            // view_textInstructions.setText(textInstructions);
+
+            TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
+            view_textInstructions.setText(textInstructions);
 
             // Draw/hide the sight
             if(!drawSight) {
@@ -178,7 +179,6 @@ implements SurfaceHolder.Callback {
             if(!drawToggleFlash){
                 findViewById(getResourceId("id/csZbarScannerToggleFlashButton")).setVisibility(View.INVISIBLE);
             }
-            
 
             // Create preview SurfaceView
             scannerSurface = new SurfaceView (this) {
