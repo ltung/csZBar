@@ -91,41 +91,11 @@ implements SurfaceHolder.Callback {
     @Override
     public void onCreate (Bundle savedInstanceState) {
 
-
-        int permissionCheck = ContextCompat.checkSelfPermission(this.getBaseContext(), Manifest.permission.CAMERA);
-
-        if(permissionCheck == PackageManager.PERMISSION_GRANTED){
-
-            setUpCamera();
-
-        } else {
-
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.CAMERA},
-                    CAMERA_PERMISSION_REQUEST);
-        }
+        setUpCamera();
         super.onCreate(savedInstanceState);
 
-
     }
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case CAMERA_PERMISSION_REQUEST: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    setUpCamera();
-                } else {
 
-                   onBackPressed();
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
     private void setUpCamera() {
         // If request is cancelled, the result arrays are empty.
 
