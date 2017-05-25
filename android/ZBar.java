@@ -12,7 +12,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.Manifest;
 
-import org.apache.cordova.PluginResult;
 import org.apache.cordova.PermissionHelper;
 
 import org.cloudsky.cordovaPlugins.ZBarScannerActivity;
@@ -50,7 +49,6 @@ public class ZBar extends CordovaPlugin{
                 if(isInProgress) {
                     callbackContext.error("A scan is already in progress!");
                 } else {
-
                     isInProgress = true;
                     createScanActivity();
                 }
@@ -109,19 +107,22 @@ public class ZBar extends CordovaPlugin{
                                      int[] grantResults) throws JSONException
     {
 
-        PluginResult result;
-        Boolean hasAllPermissions = true;
+        if(grantResults.length > 0) {
 
-        for (int r : grantResults) {
+            Boolean hasAllPermissions = true;
 
-            if (r == PackageManager.PERMISSION_DENIED) {
-                hasAllPermissions = false;
-                scanCallbackContext.error("Unknown error");
+            for (int r : grantResults) {
+
+                if (r == PackageManager.PERMISSION_DENIED) {
+                    hasAllPermissions = false;
+                    scanCallbackContext.error("Unknown error");
+                }
             }
-        }
 
-        if(hasAllPermissions){
-            createScanActivity();
+            if (hasAllPermissions) {
+                createScanActivity();
+            }
+
         }
    }
 
