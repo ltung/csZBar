@@ -72,7 +72,7 @@
             android:textSize="10pt"
             android:textColor="#fff"
             android:fontFamily="sans-serif-light"
-            android:text="Adicionar manualmente"
+            android:text="Exit"
             android:background="#76c043"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
