@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/feliperfmarques/csZBar.git"
+    "url": "git+https://github.com/ltung/csZBar.git"
   },
   "keywords": [
     "cszbar",
@@ -34,10 +34,10 @@
       "version": ">=3.0.0"
     }
   ],
-  "author": "Felipe Marques <https://github.com/feliperfmarques> forked from https://github.com/tjwoon/csZBar By TJ Woon <tj@cloudsky.org>",
+  "author": "Lawrence Tung <https://github.com/ltung> forked from https://github.com/feliperfmarques/csZBar By Felipe Marques",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/feliperfmarques/csZBar/issues"
+    "url": "https://github.com/ltung/csZBar/issues"
   },
-  "homepage": "https://github.com/feliperfmarques/csZBar#readme"
+  "homepage": "https://github.com/ltung/csZBar#readme"
 }

@@ -96,7 +96,7 @@
         toolbarView.barStyle = UIBarStyleBlackOpaque;
 
         UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        UIBarButtonItem *buttonCancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar" style:UIBarButtonItemStyleDone target:self action:@selector(cancelAndDismiss)];
+        UIBarButtonItem *buttonCancel = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:self action:@selector(cancelAndDismiss)];
 
         if(drawFlashToggleButton){
 
